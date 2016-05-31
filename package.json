@@ -1,0 +1,22 @@
+{
+  "name": "scalejs.messagebus",
+  "version": "1.0.0",
+  "description": "Message bus extension for scalejs",
+  "main": "scalejs.messageBus.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EikosPartners/scalejs.messageBus.git"
+  },
+  "author": "Zachary Donato <zachary.donato@eikospartners.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/EikosPartners/scalejs.messageBus/issues"
+  },
+  "homepage": "https://github.com/EikosPartners/scalejs.messageBus#readme",
+  "dependencies": {
+    "postal": "^2.0.0"
+  }
+}
