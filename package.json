@@ -2,7 +2,7 @@
   "name": "scalejs.messagebus",
   "version": "1.0.0",
   "description": "Message bus extension for scalejs",
-  "main": "scalejs.messageBus.js",
+  "main": "dist/scalejs.messageBus.min.js",
   "scripts": {
     "build": "webpack && uglifyjs dist/scalejs.messageBus.js --screw-ie8 -o dist/scalejs.messageBus.min.js"
   },
