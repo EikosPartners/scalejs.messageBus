@@ -4,7 +4,7 @@
   "description": "Message bus extension for scalejs",
   "main": "scalejs.messageBus.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "webpack && uglifyjs dist/scalejs.messageBus.js --screw-ie8 -o dist/scalejs.messageBus.min.js"
   },
   "repository": {
     "type": "git",
@@ -17,6 +17,13 @@
   },
   "homepage": "https://github.com/EikosPartners/scalejs.messageBus#readme",
   "dependencies": {
-    "postal": "^2.0.0"
+    "postal": "^2.0.0",
+    "webpack": "^1.13.1",
+    "webpack-node-externals": "^1.2.0"
+  },
+  "devDependencies": {
+    "babel-loader": "^6.2.4",
+    "babel-preset-es2015": "^6.9.0",
+    "uglifyjs": "^2.4.10"
   }
 }
