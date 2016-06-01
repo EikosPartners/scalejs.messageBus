@@ -49,7 +49,6 @@
 	Object.defineProperty(exports, "__esModule", {
 	    value: true
 	});
-	exports.notify = exports.receive = undefined;
 
 	var _postal = __webpack_require__(1);
 
@@ -75,8 +74,10 @@
 	    });
 	};
 
-	exports.receive = receive;
-	exports.notify = notify;
+	exports.default = {
+	    receive: receive,
+	    notify: notify
+	};
 
 /***/ },
 /* 1 */
