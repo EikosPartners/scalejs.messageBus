@@ -19,6 +19,6 @@ var notify = function (event, data) {
 };
 
 export default {
-    receive,
-    notify 
+    receive: receive,
+    notify: notify
 }
