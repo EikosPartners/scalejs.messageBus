@@ -74,10 +74,7 @@
 	    });
 	};
 
-	exports.default = {
-	    receive: receive,
-	    notify: notify
-	};
+	exports.default = [receive, notify];
 
 /***/ },
 /* 1 */

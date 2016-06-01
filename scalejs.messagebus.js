@@ -18,7 +18,7 @@ var notify = function (event, data) {
     });
 };
 
-export default {
-    receive: receive,
-    notify: notify
-}
+export default [
+    receive,
+    notify
+]
