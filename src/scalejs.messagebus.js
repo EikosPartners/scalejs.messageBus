@@ -1,23 +1,22 @@
-// import postal from 'postal';
+import postal from 'postal';
 
-// var channel = postal.channel("messageChannel");
+var channel = postal.channel("messageChannel");
 
     function receive(event, callback) {
-        // var subscription = channel.subscribe({
-        //     channel: "messageChannel",
-        //     topic: event,
-        //     callback: callback
-        // });
-        console.log('in receive');
+        var subscription = channel.subscribe({
+            channel: "messageChannel",
+            topic: event,
+            callback: callback
+        });
     };
+    
     function notify (event, data) {
-        // channel.publish({
-        //     channel: "messageChannel",
-        //     topic: event,
-        //     data : data
-        // });
-        console.log('in notify');
+        channel.publish({
+            channel: "messageChannel",
+            topic: event,
+            data : data
+        });
     };
        
-    export {receive, notify}
+ export {receive, notify}
 

@@ -1,27 +1,32 @@
-'use strict';
+"use strict";
 
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
-// import postal from 'postal';
+exports.notify = exports.receive = undefined;
 
-// var channel = postal.channel("messageChannel");
+var _postal = require("postal");
+
+var _postal2 = _interopRequireDefault(_postal);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var channel = _postal2.default.channel("messageChannel");
 
 function receive(event, callback) {
-    // var subscription = channel.subscribe({
-    //     channel: "messageChannel",
-    //     topic: event,
-    //     callback: callback
-    // });
-    console.log('in receive');
+    var subscription = channel.subscribe({
+        channel: "messageChannel",
+        topic: event,
+        callback: callback
+    });
 };
+
 function notify(event, data) {
-    // channel.publish({
-    //     channel: "messageChannel",
-    //     topic: event,
-    //     data : data
-    // });
-    console.log('in notify');
+    channel.publish({
+        channel: "messageChannel",
+        topic: event,
+        data: data
+    });
 };
 
 exports.receive = receive;
