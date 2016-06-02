@@ -42,20 +42,6 @@
 /************************************************************************/
 /******/ ([
 /* 0 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	var receive = __webpack_require__(1).receive;
-	var notify = __webpack_require__(1).receive;
-
-	module.exports = {
-	    receive: receive,
-	    notify: notify
-	};
-
-/***/ },
-/* 1 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -63,27 +49,23 @@
 	// import postal from 'postal';
 
 	// var channel = postal.channel("messageChannel");
-
-	var receive = function receive(event, callback) {
-	  // var subscription = channel.subscribe({
-	  //     channel: "messageChannel",
-	  //     topic: event,
-	  //     callback: callback
-	  // });
-	  console.log('in receive');
-	};
-	var notify = function notify(event, data) {
-	  // channel.publish({
-	  //     channel: "messageChannel",
-	  //     topic: event,
-	  //     data : data
-	  // });
-	  console.log('in notify');
-	};
-
 	module.exports = {
-	  receive: receive,
-	  notify: notify
+	    receive: function receive(event, callback) {
+	        // var subscription = channel.subscribe({
+	        //     channel: "messageChannel",
+	        //     topic: event,
+	        //     callback: callback
+	        // });
+	        console.log('in receive');
+	    },
+	    notify: function notify(event, data) {
+	        // channel.publish({
+	        //     channel: "messageChannel",
+	        //     topic: event,
+	        //     data : data
+	        // });
+	        console.log('in notify');
+	    }
 	};
 
 /***/ }

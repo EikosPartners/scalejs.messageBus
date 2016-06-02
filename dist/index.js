@@ -62,11 +62,13 @@
 	Object.defineProperty(exports, "__esModule", {
 	    value: true
 	});
+	exports.receive = receive;
+	exports.notify = notify;
 	// import postal from 'postal';
 
 	// var channel = postal.channel("messageChannel");
 
-	var receive = function receive(event, callback) {
+	function receive(event, callback) {
 	    // var subscription = channel.subscribe({
 	    //     channel: "messageChannel",
 	    //     topic: event,
@@ -74,7 +76,7 @@
 	    // });
 	    console.log('in receive');
 	};
-	var notify = function notify(event, data) {
+	function notify(event, data) {
 	    // channel.publish({
 	    //     channel: "messageChannel",
 	    //     topic: event,
@@ -83,7 +85,7 @@
 	    console.log('in notify');
 	};
 
-	exports.default = { receive: receive, notify: notify };
+	//export default {receive, notify}
 
 /***/ }
 /******/ ]);
