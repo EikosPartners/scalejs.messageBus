@@ -1,33 +1,89 @@
-"use strict";
+var messageBus =
+/******/ (function(modules) { // webpackBootstrap
+/******/ 	// The module cache
+/******/ 	var installedModules = {};
 
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-exports.notify = exports.receive = undefined;
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
 
-var _postal = require("postal");
+/******/ 		// Check if module is in cache
+/******/ 		if(installedModules[moduleId])
+/******/ 			return installedModules[moduleId].exports;
 
-var _postal2 = _interopRequireDefault(_postal);
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = installedModules[moduleId] = {
+/******/ 			exports: {},
+/******/ 			id: moduleId,
+/******/ 			loaded: false
+/******/ 		};
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+/******/ 		// Execute the module function
+/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
 
-var channel = _postal2.default.channel("messageChannel");
+/******/ 		// Flag the module as loaded
+/******/ 		module.loaded = true;
 
-function receive(event, callback) {
-    var subscription = channel.subscribe({
-        channel: "messageChannel",
-        topic: event,
-        callback: callback
-    });
-};
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
 
-function notify(event, data) {
-    channel.publish({
-        channel: "messageChannel",
-        topic: event,
-        data: data
-    });
-};
 
-exports.receive = receive;
-exports.notify = notify;
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = modules;
+
+/******/ 	// expose the module cache
+/******/ 	__webpack_require__.c = installedModules;
+
+/******/ 	// __webpack_public_path__
+/******/ 	__webpack_require__.p = "";
+
+/******/ 	// Load entry module and return exports
+/******/ 	return __webpack_require__(0);
+/******/ })
+/************************************************************************/
+/******/ ([
+/* 0 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	exports.notify = exports.receive = undefined;
+
+	var _postal = __webpack_require__(1);
+
+	var _postal2 = _interopRequireDefault(_postal);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var channel = _postal2.default.channel("messageChannel");
+
+	function receive(event, callback) {
+	    var subscription = channel.subscribe({
+	        channel: "messageChannel",
+	        topic: event,
+	        callback: callback
+	    });
+	};
+
+	function notify(event, data) {
+	    channel.publish({
+	        channel: "messageChannel",
+	        topic: event,
+	        data: data
+	    });
+	};
+
+	exports.receive = receive;
+	exports.notify = notify;
+
+/***/ },
+/* 1 */
+/***/ function(module, exports) {
+
+	module.exports = require("postal");
+
+/***/ }
+/******/ ]);
