@@ -6,7 +6,8 @@ module.exports = {
     output : {
         path : "dist",
         filename : "scalejs.messagebus.js",
-        library: "messageBus"
+        library: "messageBus",
+        libraryTarget: "commonjs2"
     },
     externals : [nodeExternals()],
     module : {
