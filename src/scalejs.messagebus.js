@@ -3,7 +3,7 @@ import postal from 'postal';
 var channel = postal.channel("messageChannel");
 
     function receive(event, callback) {
-        var subscription = channel.subscribe({
+        return channel.subscribe({
             channel: "messageChannel",
             topic: event,
             callback: callback
