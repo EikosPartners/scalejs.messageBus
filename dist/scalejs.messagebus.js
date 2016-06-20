@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
-exports.notify = exports.receive = undefined;
+exports.dispose = exports.notify = exports.receive = undefined;
 
 var _postal = require("postal");
 
@@ -12,13 +12,16 @@ var _postal2 = _interopRequireDefault(_postal);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var channel = _postal2.default.channel("messageChannel");
+var subscription;
 
 function receive(event, callback) {
-    return channel.subscribe({
+    subscription = channel.subscribe({
         channel: "messageChannel",
         topic: event,
         callback: callback
     });
+
+    return subscription;
 };
 
 function notify(event, data) {
@@ -29,5 +32,10 @@ function notify(event, data) {
     });
 };
 
+function dispose() {
+    subscription.unsubscribe();
+};
+
 exports.receive = receive;
 exports.notify = notify;
+exports.dispose = dispose;
