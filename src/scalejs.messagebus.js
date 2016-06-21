@@ -9,7 +9,7 @@ var subscription;
             topic: event,
             callback: callback
         });
-
+        subscription.dispose = subscription.unsubscribe;
         return subscription;
     };
 
@@ -21,8 +21,4 @@ var subscription;
         });
     };
 
-    function dispose() {
-        subscription.unsubscribe();
-    };
-
- export {receive, notify, dispose}
+ export {receive, notify}

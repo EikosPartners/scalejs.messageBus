@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
-exports.dispose = exports.notify = exports.receive = undefined;
+exports.notify = exports.receive = undefined;
 
 var _postal = require("postal");
 
@@ -20,7 +20,7 @@ function receive(event, callback) {
         topic: event,
         callback: callback
     });
-
+    subscription.dispose = subscription.unsubscribe;
     return subscription;
 };
 
@@ -32,10 +32,5 @@ function notify(event, data) {
     });
 };
 
-function dispose() {
-    subscription.unsubscribe();
-};
-
 exports.receive = receive;
 exports.notify = notify;
-exports.dispose = dispose;
